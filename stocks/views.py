@@ -9,6 +9,9 @@ from django.http import JsonResponse
 # Alpha Vantage API 
 API_KEY = 'IU3KH32W5EJQE5PQ'
 
+def home(reqeust):
+    return HttpResponse("This is the home page")
+
 
 def index(request):
     return HttpResponse("Blank")
