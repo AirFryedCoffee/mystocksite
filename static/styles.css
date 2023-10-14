@@ -1,0 +1,57 @@
+/* static/css/styles.css */
+
+body {
+    background-color: #000; /* Set background color to black */
+    margin: 0; /* Remove default margin */
+    display: flex;
+}
+#container {
+    display: flex;
+    height: 30vh;
+    width: 100vw;
+}
+
+#menu {
+    background-color: #222;
+    color: #fff;
+    width: 150px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+#menu a {
+    margin-bottom: 10px;
+    font-size: 16px;
+    text-decoration: none;
+    color: #fff;
+}
+
+#content {
+    flex-grow: 1;
+    padding: 10px;
+}
+
+#ticker-bar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    overflow: hidden;
+    width: 100%; /* Set a fixed width for the #ticker-bar */
+}
+
+#ticker-marquee {
+    white-space: nowrap;
+    overflow: hidden;
+    animation: marquee 50s linear infinite; /* Adjust the duration for a slower speed */
+}
+
+.ticker-item {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}

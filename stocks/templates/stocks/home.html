@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <title>Stonk Stuff</title>
+    <link rel="stylesheet" type="text/css" href="{% static '/styles.css' %}">
+</head>
+<body>
+    <div id="container">
+        <div id="menu">
+            <!-- Your menu items go here -->
+            <a href="#">Would You</a>
+            <a href="#">Like Some</a>
+            <a href="#">Cock?!</a>
+        </div>
+        <div id="content">
+
+
+    <div id="ticker-bar">
+        <label>Markets</label>
+        <div id="ticker-marquee" style="display: flex; animation: marquee 50s linear infinite;">
+            {% for ticker in trending_tickers %}
+                <div class="ticker-item" style="margin-right: 15px;">
+                    {{ ticker }}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
+
+

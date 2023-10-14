@@ -1,0 +1,73 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Closing Prices</title>
+    <!-- Include Chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@^3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@^2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@^1"></script>
+</head>
+<body>
+    <h1>Stock Closing Prices</h1>
+
+    <!-- Create a canvas element to render the line chart -->
+    <canvas id="closingChart" width="800" height="400"></canvas>
+
+    <script>
+        // JSON data passed from Django views
+        var closingPrices = ['{{ closing_prices|safe }}'];
+        var closingPricesJson = JSON.parse(closingPrices);
+        
+        console.log(closingPrices);
+        var prices_array = [];
+        var dates_array = [];
+
+        
+        closingPricesJson.forEach(element => {
+            console.log(element["Closing Price"]);
+            prices_array.push(element["Closing Price"]);
+            dates_array.push(element["Date"]);
+        });
+
+        
+        var ctx = document.getElementById('closingChart').getContext('2d');
+
+        // Create the line chart
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: dates_array,
+                datasets: [{
+                    label: 'Closing Prices',
+                    data: prices_array,
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1,
+                    fill: false
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        type: 'time',
+                        time: {
+                            unit: 'day'
+                        }
+                    },
+                    y: {
+                        beginAtZero: false
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+
