@@ -1,11 +1,12 @@
 from django.db import models
 
-class Stonk(models.Model):
+class UserStock(models.Model):
     ticker_symbol = models.CharField(max_length=5)
-    volume = models.BigIntegerField()
+    date_selected = models.DateField(auto_now=True)
 
     def __str__(self):
         return self.ticker_symbol
+
 
 
 

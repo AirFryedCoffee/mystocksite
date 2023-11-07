@@ -1,11 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 import requests
 import json
 from django.views.decorators.csrf import csrf_exempt
-from .models import Stonk
+from .models import UserStock
 from django.http import JsonResponse
 from datetime import datetime
+from .forms import UserStockForm
 
 # Alpha Vantage API 
 vantage_api_key = 'IU3KH32W5EJQE5PQ'
@@ -31,9 +32,16 @@ def home(reqeust):
 def index(request):
     return HttpResponse("Blank")
 
+#def get_user_ticker_from_db():
+    #latest_user_stock = UserStock.objects.latest('date_selected')
+    #return latest_user_stock
+
+#print(get_user_ticker_from_db())
 
 def get_price(request):
-    url = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=IU3KH32W5EJQE5PQ'
+    latest_user_stock = UserStock.objects.latest('date_selected')
+    
+    url = f'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={latest_user_stock.ticker_symbol}&apikey=IU3KH32W5EJQE5PQ'
     r = requests.get(url)
     data = r.json()
 
@@ -50,6 +58,18 @@ def get_price(request):
     print(new_closing_prices)
 
     return render(request, 'stocks/closing_prices.html', {"closing_prices": new_closing_prices})
+
+def new_user_stock(request):
+    if request.method == "POST":
+        form = UserStockForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("get_price")
+    else:
+        form = UserStockForm()
+    return render(request, "stocks/new_stock.html", {"form": form})
+
+
 
 
  
