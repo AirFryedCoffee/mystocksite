@@ -72,4 +72,5 @@ def new_user_stock(request):
 
 
 
+
  
