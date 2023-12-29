@@ -14,3 +14,17 @@
     display: inline-block;
 }
 
+.nav_links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    font-size: 2rem;
+}
+
+nav {
+    justify-content: space-around;
+    align-items: center;
+    height: 17vh;
+}
+
+
