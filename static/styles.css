@@ -1,5 +1,46 @@
 /* static/css/styles.css */
-#ticker-bar {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+body {
+    font-family: 'Poppins' sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+p {
+    color: dimgray;
+}
+
+nav, .nav-links {
+    display: flex;
+}
+
+nav {
+    justify-content: space-around;
+    align-items: center;
+    height: 17vh;
+}
+
+.nav-links {
+    gap: 2rem;
+    list-style: none;
+    font-size: 1.5rem;    
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: grey;
+    text-decoration: underline;
+    text-decoration-color: grey;
+}
+
+.ticker-bar {
     height: 17;
 }
 
@@ -14,17 +55,11 @@
     display: inline-block;
 }
 
-.nav_links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.logo {
     font-size: 2rem;
 }
-
-nav {
-    justify-content: space-around;
-    align-items: center;
-    height: 17vh;
-}
-
 
