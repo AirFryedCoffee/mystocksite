@@ -1,7 +1,8 @@
+{% extends 'stocks/base.html' %}
+
 {% block title %}Input a Stock Ticker {% endblock  %}
 {% block content %}
-<h2>Input a ticker</h2>
-<form method="post">
+<form id="ticker-entry" method="post">
     <table>
         {{ form }}
     </table>
@@ -9,3 +10,4 @@
     <button type="submit">Create</button>
 </form>
 {% endblock %}
+

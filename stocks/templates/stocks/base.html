@@ -18,6 +18,18 @@
                 </ul>
             </div>
     </header>
+    <div id="ticker-bar">
+        <label>Markets</label>
+        <div id="ticker-marquee">
+            <marquee behavior="scroll" direction="left" style="animation: marquee 50s linear infinite;">
+                {% for ticker in trending_tickers %}
+                <div class="ticker-item">
+                    {{ ticker }}
+                </div>
+                {% endfor %}
+            </marquee>
+        </div>
+    </div>
     <body>
         <div class="wrapper">
             {% block content%}
@@ -25,6 +37,7 @@
         </div>
     </body>
 </html>
+
 
 
 

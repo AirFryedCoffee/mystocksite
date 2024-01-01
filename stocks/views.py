@@ -21,7 +21,7 @@ def get_trending_tickers():
 
 def trending_tickers_view(reqeust):
     trending_tickers = get_trending_tickers()
-    return render(reqeust, 'stocks/home.html', {'trending_tickers': trending_tickers})
+    return render(reqeust, 'stocks/base.html', {'trending_tickers': trending_tickers})
 
 
 
