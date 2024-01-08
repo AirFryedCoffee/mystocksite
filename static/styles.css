@@ -58,6 +58,7 @@ a:hover {
 .ticker-item {
     margin-right: 15px;
     display: inline-block;
+    font-size: 20px;
 }
 
 .logo {
@@ -70,7 +71,7 @@ a:hover {
     margin-top: 30px;
     justify-content: center;
     align-items: center;
-    height: 50vh;
+    height: 48vh;
 }
 
 #ticker-table {
@@ -81,4 +82,20 @@ a:hover {
 #ticker-button {
     display: flex;
     align-items: center;
+}
+
+#ticker-entry label, #ticker-entry input, #ticker-button {
+    font-size: 20px;
+    padding: 10px;
+    margin-bottom: 10px;
+} 
+
+#ticker-button {
+    display: flex;
+    align-items: center;
+}
+
+#about-image {
+    max-width: 300px;
+    margin-right: 20px;
 }
