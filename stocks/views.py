@@ -11,6 +11,11 @@ from .forms import UserStockForm
 # Alpha Vantage API 
 vantage_api_key = 'IU3KH32W5EJQE5PQ'
 
+
+
+
+
+
 def get_trending_tickers():
     trending_tickers_url = f'https://www.alphavantage.co/query?function=TOP_GAINERS_LOSERS&apikey={vantage_api_key}'
     s = requests.get(trending_tickers_url)
@@ -25,18 +30,6 @@ def trending_tickers_view(reqeust):
 
 
 
-def home(reqeust):
-    return render(reqeust, 'stocks/home.html')
-
-
-def index(request):
-    return HttpResponse("Blank")
-
-#def get_user_ticker_from_db():
-    #latest_user_stock = UserStock.objects.latest('date_selected')
-    #return latest_user_stock
-
-#print(get_user_ticker_from_db())
 
 def get_price(request):
     latest_user_stock = UserStock.objects.latest('date_selected')

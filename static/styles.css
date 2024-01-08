@@ -68,8 +68,17 @@ a:hover {
     display: flex;
     flex-direction: column;
     margin-top: 30px;
+    justify-content: center;
     align-items: center;
     height: 50vh;
 }
 
+#ticker-table {
+    display: flex;
+    align-items: center;
+}
 
+#ticker-button {
+    display: flex;
+    align-items: center;
+}
