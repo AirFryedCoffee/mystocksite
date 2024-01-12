@@ -1,8 +1,8 @@
 /* static/css/styles.css */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap');
 
 body {
-    font-family: 'Poppins' sans-serif;
+    font-family: 'Oxygen', sans-serif;
     background-image: url('./smback.jpeg');
     background-size: cover;
     background-position: center;
@@ -14,7 +14,7 @@ html {
 }
 
 p {
-    color: dimgray;
+    color: whitesmoke;
 }
 
 nav, .nav-links {
@@ -30,6 +30,18 @@ nav {
 marquee {
     height: 50px;
     position: relative;
+}
+
+label {
+    color: white;
+}
+
+h1 {
+    color: honeydew;
+}
+
+h3 {
+    color: antiquewhite;
 }
 
 .nav-links {
@@ -102,12 +114,18 @@ a:hover {
 }
 
 #about-image {
-    max-width: 300px;
+    max-width: 400px;
     margin-right: 20px;
+    float: right;
+    margin-top: 125px;
 }
 
-label {
-    color: white;
+.about-section {
+    border: 1px solid white;
+    padding: 15px;
+    margin-top: 15px;
+    width: 50%;
+    right: 0;
 }
 
 
