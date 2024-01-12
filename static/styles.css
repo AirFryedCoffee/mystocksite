@@ -3,6 +3,10 @@
 
 body {
     font-family: 'Poppins' sans-serif;
+    background-image: url('./smback.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 html {
@@ -35,7 +39,7 @@ marquee {
 }
 
 a {
-    color: black;
+    color: white;
     text-decoration: none;
 }
 
@@ -59,10 +63,12 @@ a:hover {
     margin-right: 15px;
     display: inline-block;
     font-size: 20px;
+    color: white;
 }
 
 .logo {
     font-size: 2rem;
+    color: white;
 }
 
 #ticker-entry {
@@ -99,3 +105,9 @@ a:hover {
     max-width: 300px;
     margin-right: 20px;
 }
+
+label {
+    color: white;
+}
+
+
