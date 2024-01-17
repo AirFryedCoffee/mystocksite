@@ -13,7 +13,9 @@ vantage_api_key = 'IU3KH32W5EJQE5PQ'
 
 
 
-
+'''The trending tickers function calls the Alpha Vantage API, and gets a list of trending tickers, that is provided by Alpha Vantage.
+The tickers that are received are then filtered to only select stocks that have a trading volume of greater than 1 million.
+'''
 
 
 def get_trending_tickers():
