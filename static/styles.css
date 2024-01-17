@@ -116,8 +116,6 @@ a:hover {
 #about-image {
     max-width: 400px;
     margin-right: 20px;
-    float: right;
-    margin-top: 125px;
 }
 
 .about-section {
@@ -131,6 +129,10 @@ a:hover {
     height: 300px;
     width: 400px;
     padding: 15px;
+}
+
+#vantage-pic:hover::before {
+    opacity: 1;
 }
 
 #information-section {
