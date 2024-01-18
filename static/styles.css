@@ -44,6 +44,10 @@ h3 {
     color: antiquewhite;
 }
 
+canvas {
+    background-color: white;
+}
+
 .nav-links {
     gap: 2rem;
     list-style: none;
