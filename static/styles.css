@@ -119,10 +119,12 @@ a:hover {
 }
 
 .about-section {
-    border: 1px solid white;
+    /*border: 1px solid white;*/
     padding: 15px;
     margin-top: 15px;
     text-align: center;
+    /*background-color: black;*/
+    width: 100%;
 }
 
 #vantage-pic {
@@ -137,8 +139,16 @@ a:hover {
 
 #information-section {
     text-align: center;
-    border: 1px solid white;
+    /* border: 1px solid white;*/
     margin: 100px auto 0;
     max-width: 600px;
 }
 
+#contact-image {
+    max-width: 100px;
+    padding: 20px;
+}
+
+#contact-section {
+    text-align: center;
+}
