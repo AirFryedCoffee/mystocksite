@@ -46,6 +46,7 @@ h3 {
 
 canvas {
     background-color: white;
+    padding: 10px;
 }
 
 .nav-links {

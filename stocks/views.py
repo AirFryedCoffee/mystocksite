@@ -10,6 +10,7 @@ from .forms import UserStockForm
 
 # Alpha Vantage API 
 vantage_api_key = 'IU3KH32W5EJQE5PQ'
+vantage_api_key_2 = '5DTO3091AOCEV87A'
 
 
 
@@ -32,7 +33,6 @@ def trending_tickers_view(reqeust):
 
 
 
-
 def get_price(request):
     latest_user_stock = UserStock.objects.latest('date_selected')
     
@@ -52,7 +52,20 @@ def get_price(request):
     new_closing_prices = json.dumps(closing_prices).replace("'", "\"")
     print(new_closing_prices)
 
-    return render(request, 'stocks/closing_prices.html', {"closing_prices": new_closing_prices})
+    alpha_url = f'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=SPY&apikey=IU3KH32W5EJQE5PQ'
+    requests_data = requests.get(alpha_url)
+    final_data = requests_data.json()
+
+    spy_closing_prices = []
+
+    for date2, values2 in final_data['Time Series (Daily)'].items():
+        spy_closing_price = float(values2['4. close'])
+        spy_closing_prices.append({"Date": date2, "Closing Price": spy_closing_price})
+
+    new_spy_closing_prices = json.dumps(spy_closing_prices).replace("'", "\"")
+    print(new_spy_closing_prices)
+
+    return render(request, 'stocks/closing_prices.html', {"closing_prices": new_closing_prices, "spy_closing_prices": new_spy_closing_prices})
 
 def new_user_stock(request):
     if request.method == "POST":

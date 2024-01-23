@@ -17,7 +17,7 @@
 
     <!-- Create a canvas element to render the line chart -->
     <canvas id="closingChart" width="800" height="400"></canvas>
-
+    <canvas id="spyClosingChart" width="800" height="400"></canvas>
     <script>
         // JSON data passed from Django views
         var closingPrices = ['{{ closing_prices|safe }}'];
@@ -64,6 +64,51 @@
                 }
             }
         });
+        var spyClosingPrices = ['{{ spy_closing_prices|safe }}'];
+        var spyClosingPricesJson = JSON.parse(spyClosingPrices);
+        
+        console.log(spyClosingPrices);
+        var spy_prices_array = [];
+        var spy_dates_array = [];
+
+        
+        spyClosingPricesJson.forEach(element => {
+            console.log(element["Closing Price"]);
+            spy_prices_array.push(element["Closing Price"]);
+            spy_dates_array.push(element["Date"]);
+        });
+
+        
+        var spyctx = document.getElementById('spyClosingChart').getContext('2d');
+
+        // Create the line chart
+        var mySpyChart = new Chart(spyctx, {
+            type: 'line',
+            data: {
+                labels: spy_dates_array,
+                datasets: [{
+                    label: 'Closing Prices',
+                    data: spy_prices_array,
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1,
+                    fill: false
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        type: 'time',
+                        time: {
+                            unit: 'day'
+                        }
+                    },
+                    y: {
+                        beginAtZero: false
+                    }
+                }
+            }
+        });
+
     </script>
 </body>
 </html>
