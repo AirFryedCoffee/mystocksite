@@ -15,4 +15,3 @@ SPY (S&P 500 ETF), to gauge relative strength or weakness compared to the overal
 
 The functionality of this project is complete. The API that Alpha Vantage provides for free only allows for 25 calls per day. The very first tier up from that is 25$ a month. For this reason, I have not deployed this website yet. I am still editing and making changes to this project. I usually sit down for about an hour a day and make visual changes to the site until I have tested more than 25 times, and the API becomes unresponsive. This was a great project to learn the basics of a web development framework such as Django. 
 
-I have recently emailed Alpha Vantage in hopes that I will be able to acquire a premium API key at a discount as I have heard they offer discounts to students. 
